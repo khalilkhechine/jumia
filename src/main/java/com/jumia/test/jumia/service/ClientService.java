@@ -11,5 +11,5 @@ public interface ClientService {
     Client findById(Long id);
     void delete(Long id) throws Exception;
     List<Client> findAll();
-    Client findByEmailAndPassword(String email, String password);
+    Client findByEmailAndPassword(String email, String password) throws Exception;
 }

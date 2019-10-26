@@ -54,7 +54,11 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public Client findByEmailAndPassword(String email, String password) {
-        return clientDao.findByEmailAndPassword(email, password);
+    public Client findByEmailAndPassword(String email, String password) throws Exception {
+        Client client = clientDao.findByEmailAndPassword(email, password);
+        if (client == null) {
+            throw new Exception("Client not  found");
+        }
+        return client;
     }
 }

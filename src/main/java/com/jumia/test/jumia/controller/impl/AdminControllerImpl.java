@@ -24,7 +24,7 @@ public class AdminControllerImpl implements AdminController {
         try {
             adminResponseEntity = new ResponseEntity<>(adminService.create(admin), HttpStatus.CREATED);
         } catch (Exception e) {
-            adminResponseEntity = new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+            adminResponseEntity = new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
         return adminResponseEntity;
     }
