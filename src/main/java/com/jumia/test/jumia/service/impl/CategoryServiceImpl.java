@@ -4,9 +4,12 @@ import com.jumia.test.jumia.dao.CategoryDao;
 import com.jumia.test.jumia.entity.Category;
 import com.jumia.test.jumia.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+
+@Component
 public class CategoryServiceImpl implements CategoryService {
 
     @Autowired

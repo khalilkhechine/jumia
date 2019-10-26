@@ -4,9 +4,12 @@ import com.jumia.test.jumia.dao.ProductDao;
 import com.jumia.test.jumia.entity.Product;
 import com.jumia.test.jumia.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+
+@Component
 public class ProductServiceImpl implements ProductService {
 
     @Autowired

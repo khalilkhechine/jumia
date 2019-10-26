@@ -4,9 +4,11 @@ import com.jumia.test.jumia.dao.AdminDao;
 import com.jumia.test.jumia.entity.Admin;
 import com.jumia.test.jumia.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class AdminServiceImpl implements AdminService {
 
     @Autowired

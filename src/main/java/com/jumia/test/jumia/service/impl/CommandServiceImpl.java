@@ -4,10 +4,12 @@ import com.jumia.test.jumia.dao.CommandDao;
 import com.jumia.test.jumia.entity.Command;
 import com.jumia.test.jumia.service.CommandService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Component
 public class CommandServiceImpl implements CommandService {
 
     @Autowired
