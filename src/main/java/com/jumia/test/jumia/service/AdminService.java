@@ -11,5 +11,5 @@ public interface AdminService {
     Admin findById(Long id);
     void delete(Long id) throws Exception;
     List<Admin> findAll();
-    Admin findByEmailAndPassword(String email, String password);
+    Admin findByEmailAndPassword(String email, String password) throws Exception;
 }

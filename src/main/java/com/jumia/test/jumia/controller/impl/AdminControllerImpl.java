@@ -31,26 +31,59 @@ public class AdminControllerImpl implements AdminController {
 
     @Override
     public ResponseEntity<Admin> update(Long id, Admin admin) {
-        return null;
+        ResponseEntity<Admin> adminResponseEntity;
+        try {
+            adminResponseEntity = new ResponseEntity<>(adminService.update(id, admin), HttpStatus.ACCEPTED);
+        } catch (Exception e) {
+            adminResponseEntity = new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return adminResponseEntity;
     }
 
     @Override
     public ResponseEntity<Admin> findById(Long id) {
-        return null;
+        ResponseEntity<Admin> adminResponseEntity;
+        try {
+            adminResponseEntity = new ResponseEntity<>(adminService.findById(id), HttpStatus.OK);
+        } catch (Exception e) {
+            adminResponseEntity = new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return adminResponseEntity;
     }
 
     @Override
     public ResponseEntity<List<Admin>> findAll() {
-        return null;
+        ResponseEntity<List<Admin>> adminResponseEntity;
+        try {
+            adminResponseEntity = new ResponseEntity<>(adminService.findAll(), HttpStatus.OK);
+        } catch (Exception e) {
+            adminResponseEntity = new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return adminResponseEntity;
     }
 
     @Override
     public ResponseEntity<String> delete(Long id) {
-        return null;
+
+        ResponseEntity<String> adminResponseEntity;
+        try {
+            adminService.delete(id);
+            adminResponseEntity = new ResponseEntity<>(HttpStatus.ACCEPTED);
+        } catch (Exception e) {
+            adminResponseEntity = new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+        return adminResponseEntity;
     }
 
     @Override
     public ResponseEntity<Admin> login(LoginDetails loginDetails) {
+        ResponseEntity<Admin> adminResponseEntity;
+        try {
+
+            adminResponseEntity = new ResponseEntity<>(adminService.findByEmailAndPassword(loginDetails.getEmail(), loginDetails.getPassword()),HttpStatus.ACCEPTED);
+        } catch (Exception e) {
+            adminResponseEntity = new ResponseEntity(HttpStatus.UNAUTHORIZED);
+        }
         return null;
     }
 }

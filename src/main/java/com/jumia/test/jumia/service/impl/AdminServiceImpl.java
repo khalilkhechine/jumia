@@ -53,7 +53,12 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public Admin findByEmailAndPassword(String email, String password) {
-        return adminDao.findByEmailAndPassword(email, password);
+    public Admin findByEmailAndPassword(String email, String password) throws Exception {
+        Admin admin = adminDao.findByEmailAndPassword(email, password);
+
+        if (admin == null) {
+            throw new Exception("This admin is not found");
+        }
+        return admin;
     }
 }
