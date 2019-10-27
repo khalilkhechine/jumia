@@ -39,7 +39,7 @@ public class CategoryServiceImpl implements CategoryService {
     public void delete(Long id) throws Exception {
         Category category = findById(id);
         if (category == null) {
-            throw new Exception("Category not found") ;
+            throw new Exception("Category not found");
         }
         categoryDao.delete(category);
     }

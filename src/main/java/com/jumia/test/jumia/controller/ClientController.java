@@ -15,7 +15,7 @@ public interface ClientController {
     ResponseEntity<Client> create(@RequestBody Client client);
 
     @PutMapping("/{id}")
-    ResponseEntity<Client> update(@PathVariable Long id ,@RequestBody Client client);
+    ResponseEntity<Client> update(@PathVariable Long id, @RequestBody Client client);
 
     @GetMapping("/{id}")
     ResponseEntity<Client> findById(@PathVariable Long id);
@@ -28,6 +28,6 @@ public interface ClientController {
 
     @PostMapping("/login")
     ResponseEntity<Client> login(@RequestBody LoginDetails loginDetails);
-    
-    
+
+
 }

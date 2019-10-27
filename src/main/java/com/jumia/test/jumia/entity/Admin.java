@@ -11,7 +11,7 @@ import javax.persistence.Entity;
 @NoArgsConstructor
 @ToString
 @Entity
-public class Admin extends User{
+public class Admin extends User {
 
     private String job;
 }

@@ -15,7 +15,7 @@ public interface AdminController {
     ResponseEntity<Admin> create(@RequestBody Admin admin);
 
     @PutMapping("/{id}")
-    ResponseEntity<Admin> update(@PathVariable Long id ,@RequestBody Admin admin);
+    ResponseEntity<Admin> update(@PathVariable Long id, @RequestBody Admin admin);
 
     @GetMapping("/{id}")
     ResponseEntity<Admin> findById(@PathVariable Long id);

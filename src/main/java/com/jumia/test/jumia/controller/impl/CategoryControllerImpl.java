@@ -12,6 +12,7 @@ import java.util.List;
 public class CategoryControllerImpl implements CategoryController {
     @Autowired
     private CategoryService categoryservice;
+
     @Override
     public ResponseEntity<Category> create(Category category) {
         ResponseEntity<Category> adminResponseEntity;
@@ -27,7 +28,7 @@ public class CategoryControllerImpl implements CategoryController {
     public ResponseEntity<Category> update(Long id, Category category) {
         ResponseEntity<Category> adminResponseEntity;
         try {
-            adminResponseEntity = new ResponseEntity<>(categoryservice.update(id,category), HttpStatus.ACCEPTED);
+            adminResponseEntity = new ResponseEntity<>(categoryservice.update(id, category), HttpStatus.ACCEPTED);
         } catch (Exception e) {
             adminResponseEntity = new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -61,7 +62,7 @@ public class CategoryControllerImpl implements CategoryController {
         ResponseEntity<String> adminResponseEntity;
         try {
             categoryservice.delete(id);
-            adminResponseEntity = new ResponseEntity<String>( HttpStatus.OK);
+            adminResponseEntity = new ResponseEntity<String>(HttpStatus.OK);
         } catch (Exception e) {
             adminResponseEntity = new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
         }

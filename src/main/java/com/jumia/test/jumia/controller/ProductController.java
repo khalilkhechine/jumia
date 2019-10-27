@@ -1,7 +1,6 @@
 package com.jumia.test.jumia.controller;
 
 
-import com.jumia.test.jumia.dto.LoginDetails;
 import com.jumia.test.jumia.entity.Product;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +15,7 @@ public interface ProductController {
     ResponseEntity<Product> create(@RequestBody Product product);
 
     @PutMapping("/{id}")
-    ResponseEntity<Product> update(@PathVariable Long id ,@RequestBody Product product);
+    ResponseEntity<Product> update(@PathVariable Long id, @RequestBody Product product);
 
     @GetMapping("/{id}")
     ResponseEntity<Product> findById(@PathVariable Long id);
@@ -26,8 +25,6 @@ public interface ProductController {
 
     @DeleteMapping("/{id}")
     ResponseEntity<String> delete(@PathVariable Long id);
-
-   
 
 
 }

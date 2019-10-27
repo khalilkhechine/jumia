@@ -1,4 +1,5 @@
 package com.jumia.test.jumia.entity;
+
 import lombok.*;
 
 import javax.persistence.*;

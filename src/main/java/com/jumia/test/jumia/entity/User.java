@@ -4,7 +4,6 @@ package com.jumia.test.jumia.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
 
 @Getter
 @Setter
@@ -20,7 +19,7 @@ public class User {
     protected Long id;
     protected String firstName;
     protected String lastName;
-    @Column(unique=true)
+    @Column(unique = true)
     protected String email;
     protected String password;
 }

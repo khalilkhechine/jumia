@@ -1,7 +1,7 @@
 package com.jumia.test.jumia.controller.impl;
 
-import com.jumia.test.jumia.dto.LoginDetails;
 import com.jumia.test.jumia.controller.AdminController;
+import com.jumia.test.jumia.dto.LoginDetails;
 import com.jumia.test.jumia.entity.Admin;
 import com.jumia.test.jumia.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,7 +80,7 @@ public class AdminControllerImpl implements AdminController {
         ResponseEntity<Admin> adminResponseEntity;
         try {
 
-            adminResponseEntity = new ResponseEntity<>(adminService.findByEmailAndPassword(loginDetails.getEmail(), loginDetails.getPassword()),HttpStatus.ACCEPTED);
+            adminResponseEntity = new ResponseEntity<>(adminService.findByEmailAndPassword(loginDetails.getEmail(), loginDetails.getPassword()), HttpStatus.ACCEPTED);
         } catch (Exception e) {
             adminResponseEntity = new ResponseEntity(HttpStatus.UNAUTHORIZED);
         }

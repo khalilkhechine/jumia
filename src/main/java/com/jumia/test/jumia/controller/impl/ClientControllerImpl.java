@@ -2,9 +2,7 @@ package com.jumia.test.jumia.controller.impl;
 
 import com.jumia.test.jumia.controller.ClientController;
 import com.jumia.test.jumia.dto.LoginDetails;
-import com.jumia.test.jumia.entity.Admin;
 import com.jumia.test.jumia.entity.Client;
-import com.jumia.test.jumia.service.AdminService;
 import com.jumia.test.jumia.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,12 +10,14 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+
 @Component
 
 public class ClientControllerImpl implements ClientController {
 
     @Autowired
     private ClientService clientService;
+
     @Override
     public ResponseEntity<Client> create(Client client) {
         ResponseEntity<Client> clientResponseEntity;
@@ -35,7 +35,7 @@ public class ClientControllerImpl implements ClientController {
 
         ResponseEntity<Client> clientResponseEntity;
         try {
-            clientResponseEntity = new ResponseEntity<>(clientService.update(id,client), HttpStatus.ACCEPTED);
+            clientResponseEntity = new ResponseEntity<>(clientService.update(id, client), HttpStatus.ACCEPTED);
         } catch (Exception e) {
             clientResponseEntity = new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -87,7 +87,7 @@ public class ClientControllerImpl implements ClientController {
         ResponseEntity<Client> clientResponseEntity;
 
         try {
-            clientResponseEntity = new ResponseEntity<>(clientService.findByEmailAndPassword(loginDetails.getEmail(),loginDetails.getPassword()), HttpStatus.OK);
+            clientResponseEntity = new ResponseEntity<>(clientService.findByEmailAndPassword(loginDetails.getEmail(), loginDetails.getPassword()), HttpStatus.OK);
         } catch (Exception e) {
             clientResponseEntity = new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }

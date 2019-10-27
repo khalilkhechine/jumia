@@ -24,7 +24,7 @@ public class CommandServiceImpl implements CommandService {
     @Override
     public Command update(Long id, Command command) throws Exception {
         Command commandToUpdate = findById(id);
-        if (commandToUpdate ==  null) {
+        if (commandToUpdate == null) {
             throw new Exception("Command not found");
         }
         commandToUpdate.setProducts(command.getProducts());
