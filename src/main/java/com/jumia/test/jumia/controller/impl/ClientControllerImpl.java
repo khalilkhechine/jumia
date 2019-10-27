@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-
 public class ClientControllerImpl implements ClientController {
 
     @Autowired
@@ -94,5 +93,17 @@ public class ClientControllerImpl implements ClientController {
         return clientResponseEntity;
 
 
+    }
+
+    @Override
+    public ResponseEntity<List<Client>> searchByEmail(String email) {
+        ResponseEntity<List<Client>> clientResponseEntity;
+
+        try {
+            clientResponseEntity = new ResponseEntity<>(clientService.searchByEmail(email), HttpStatus.OK);
+        } catch (Exception e) {
+            clientResponseEntity = new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        }
+        return clientResponseEntity;
     }
 }

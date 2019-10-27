@@ -17,4 +17,6 @@ public interface ClientService {
     List<Client> findAll();
 
     Client findByEmailAndPassword(String email, String password) throws Exception;
+
+    List<Client> searchByEmail(String email);
 }

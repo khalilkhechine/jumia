@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/client")
+@CrossOrigin("*")
 public interface ClientController {
     @PostMapping
     ResponseEntity<Client> create(@RequestBody Client client);
@@ -28,6 +29,10 @@ public interface ClientController {
 
     @PostMapping("/login")
     ResponseEntity<Client> login(@RequestBody LoginDetails loginDetails);
+
+    @GetMapping("/search-by-email/{email}")
+    ResponseEntity<List<Client>> searchByEmail(@PathVariable String email);
+
 
 
 }

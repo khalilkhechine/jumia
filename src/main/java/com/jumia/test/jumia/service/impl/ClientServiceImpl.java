@@ -61,4 +61,9 @@ public class ClientServiceImpl implements ClientService {
         }
         return client;
     }
+
+    @Override
+    public List<Client> searchByEmail(String email) {
+        return clientDao.searchByEmail(email);
+    }
 }
